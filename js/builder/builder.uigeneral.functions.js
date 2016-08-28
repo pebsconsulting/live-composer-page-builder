@@ -981,7 +981,7 @@ function dslc_notice_on_refresh(e) {
  * @param  String char  Column with error
  * @return void
  */
-function dslca_generate_error_report ( error, file, line, char ) {
+function dslca_generate_error_report ( error, file, line, char, additional_info ) {
 
 	var title = 'JavaScript error detected in a third-party plugin';
 
@@ -993,6 +993,11 @@ function dslca_generate_error_report ( error, file, line, char ) {
 	var error_report = '';
 	error_report += '<br /><strong style="color:#E55F5F;">' + title + '</strong><br />';
 	error_report += error + '<br /> File "' + file + '", line ' + line + ', char ' + char + '<br />';
+
+	if ( additional_info != undefined ) {
+
+		error_report += '<br/>' + additional_info;
+	}
 
 	if ( 'undefined' !== typeof(Storage)) {
 		localStorage.setItem('js_errors_report', error_report);
