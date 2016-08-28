@@ -18,7 +18,12 @@
  */
  window.onerror = function( error, file, line, char ) {
 
-	dslca_generate_error_report ( error, file, line, char );
+	dslca_generate_error_report({
+		error: error,
+		file: file,
+		line: line,
+		char: char
+	});
 }
 
 /**
@@ -52,7 +57,12 @@ jQuery(document).ready(function($) {
 	 */
 	jQuery("#page-builder-frame")[0].contentWindow.onerror = function( error, file, line, char ) {
 
-		dslca_generate_error_report ( error, file, line, char );
+		dslca_generate_error_report({
+			error: error,
+			file: file,
+			line: line,
+			char: char
+		});
 	}
 
 	// Put JS error log data in a hidden textarea.
@@ -981,7 +991,7 @@ function dslc_notice_on_refresh(e) {
  * @param  String char  Column with error
  * @return void
  */
-function dslca_generate_error_report ( error, file, line, char, additional_info ) {
+function dslca_generate_error_report ( errorObject ) {
 
 	var title = 'JavaScript error detected in a third-party plugin';
 
@@ -992,11 +1002,17 @@ function dslca_generate_error_report ( error, file, line, char, additional_info 
 
 	var error_report = '';
 	error_report += '<br /><strong style="color:#E55F5F;">' + title + '</strong><br />';
-	error_report += error + '<br /> File "' + file + '", line ' + line + ', char ' + char + '<br />';
+	error_report += errorObject.error + '<br /> File "' + errorObject.file + '", line ' + errorObject.line + ', char ' + errorObject.char + '<br />';
 
-	if ( additional_info != undefined ) {
+	if ( errorObject.additional_info != undefined ) {
 
-		error_report += '<br/>' + additional_info;
+		error_report += '<br/>' + errorObject.additional_info;
+	}
+
+	// Add call stack
+	if ( errorObject.additional_info != undefined ) {
+
+		error_report += '<br/>' + errorObject.additional_info;
 	}
 
 	if ( 'undefined' !== typeof(Storage)) {

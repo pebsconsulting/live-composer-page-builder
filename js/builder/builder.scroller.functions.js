@@ -141,9 +141,12 @@ jQuery(document).ready(function($){
 	 */
 	LiveComposer.Builder.UI.stopScroller = function() {
 
+		console.log(';');
 		LiveComposer.Utils.publish('LC.sortableOn', {});
 
 		clearInterval(LiveComposer.Builder.Flags.windowScroller);
 		LiveComposer.Builder.Flags.windowScroller = false;
 	}
+
+	jQuery('.dslca-sections').on('dragenter', LiveComposer.Builder.UI.stopScroller);
 });

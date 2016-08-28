@@ -418,7 +418,14 @@ LiveComposer.Utils = {
 	     	throw new $global[type](msg, filename, line)
 	   	}catch(e) {
 
-	   		dslca_generate_error_report ( e.error, e.file, e.line, e.char, 'LC unserialize bug data: ' + data );
+	   		dslca_generate_error_report ({
+	   			error: msg,
+	   			file: filename,
+	   			line: line,
+	   			char: 0,
+	   			obj: e,
+	   			additional_info: 'LC unserialize bug data: ' + data
+	   		});
 	   	}
 	   }
 	   var readUntil = function (data, offset, stopchr) {
