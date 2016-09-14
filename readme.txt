@@ -187,6 +187,7 @@ Upcoming Releases:
 * Issue [#276](https://github.com/livecomposer/live-composer-page-builder/issues/276): Posts and Blog module filtering bug
 * Issue [#279](https://github.com/livecomposer/live-composer-page-builder/issues/279): Module Image - Box shadow ( Inner ) does not work
 * Infobox inline-editor in "content": https://github.com/livecomposer/live-composer-page-builder/commit/a964e976b54e5e3bff498e5af861350beda61f04
+* Issue [#297](https://github.com/livecomposer/live-composer-page-builder/issues/297): Width control overlay
 
 
 Thanks to the next contributors for helping with this update:

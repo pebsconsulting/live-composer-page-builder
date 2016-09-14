@@ -1866,7 +1866,7 @@ body.section-editing-in-progress .dslc-modules-section:not(.dslca-modules-sectio
 		margin-bottom: -13px;
 		padding-right: 0;
 		position: absolute;
-		z-index: 99998;
+		z-index: 0;
 		width: 100%;
 		text-align: center;
 	}
@@ -2233,7 +2233,7 @@ body.rtl .dslca-modules-area-placeholder {
 	margin-left: -47px;
 	top: -2px;
 	text-align: center;
-	z-index: 99999;
+	z-index: 1;
 	overflow: hidden;
 	line-height: 1;
 }
