@@ -148,6 +148,7 @@ Upcoming Releases:
 *
 * Image module: background color overlays the image.
 * Fix JS bug in inline TinyMCE: indexOF....
+* Issue [#302](https://github.com/livecomposer/live-composer-page-builder/issues/302): Sync image alt with the one set in WP.
 
 = For developers: =
 

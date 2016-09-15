@@ -152,12 +152,23 @@ class DSLC_Image extends DSLC_Module {
 				'std' => '',
 				'type' => 'text',
 			),
-
 			array(
 				'label' => __( 'Image - TITLE attribute', 'live-composer-page-builder' ),
 				'id' => 'image_title',
 				'std' => '',
 				'type' => 'text',
+			),
+			array(
+				'id' => 'sync',
+				'std' => '',
+				'type' => 'checkbox',
+				'help' => __( 'Sync alt and title values with the media library', 'live-composer-page-builder' ),
+				'choices' => array(
+					array(
+						'label' => __( 'Sync Image', 'live-composer-page-builder' ),
+						'value' => 'enabled',
+					),
+				),
 			),
 
 			/**
@@ -802,10 +813,9 @@ class DSLC_Image extends DSLC_Module {
 				'ext' => 'px',
 			),
 
-
 		);
 
-		$dslc_options = array_merge( $dslc_options, $this->shared_options( 'animation_options', array('hover_opts' => false) ) );
+		$dslc_options = array_merge( $dslc_options, $this->shared_options( 'animation_options', array( 'hover_opts' => false ) ) );
 		$dslc_options = array_merge( $dslc_options, $this->presets_options() );
 
 		return apply_filters( 'dslc_module_options', $dslc_options, $this->module_id );
@@ -823,7 +833,7 @@ class DSLC_Image extends DSLC_Module {
 
 		/* Module output starts here */
 
-		global $dslc_active;
+		global $dslc_active, $wpdb;
 
 		if ( $dslc_active && is_user_logged_in() && current_user_can( DS_LIVE_COMPOSER_CAPABILITY ) ) {
 
@@ -890,12 +900,16 @@ class DSLC_Image extends DSLC_Module {
 					}
 				}
 
+				$image_id = $wpdb->get_col( $wpdb->prepare( "SELECT ID FROM $wpdb->posts WHERE guid='%s';", $the_image ) );
+				$image_alt = get_post_meta( $image_id[0], '_wp_attachment_image_alt', true );
+				$image_title = get_the_title( $image_id[0] );
+
 				?>
 
 				<?php if ( 'none' !== $options['link_type'] ) : ?>
 					<a class="<?php echo esc_attr( $anchor_class ); ?>" href="<?php echo esc_attr( $anchor_href ); ?>" target="<?php echo esc_attr( $anchor_target ); ?>">
 				<?php endif; ?>
-					<img src="<?php echo esc_attr( $the_image ); ?>" alt="<?php echo esc_attr( $options['image_alt'] ); ?>" title="<?php echo esc_attr( $options['image_title'] ); ?>" />
+					<img src="<?php echo esc_attr( $the_image ); ?>" alt="<?php if ( $options['sync'] ) { echo $image_alt; } else { echo esc_attr( $options['image_alt'] ); } ?>" title="<?php if ( $options['sync'] ) { echo $image_title; } else { echo esc_attr( $options['image_title'] ); } ?>" />
 				<?php if ( 'none' !== $options['link_type'] ) : ?>
 					</a>
 				<?php endif; ?>
