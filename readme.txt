@@ -148,6 +148,7 @@ Upcoming Releases:
 *
 * Image module: background color overlays the image.
 * Fix JS bug in inline TinyMCE: indexOF....
+* Issue [#139](https://github.com/livecomposer/live-composer-page-builder/issues/139): Cursor is not set to pointer for many of the module option controls
 
 = For developers: =
 

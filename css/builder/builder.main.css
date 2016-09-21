@@ -415,6 +415,7 @@ body a:focus {
 			.dslca-pseudo-module-edit-save:hover {
 				background: #91dc1e;
 				color: #fff;
+				cursor: pointer;
 			}
 
 			.dslca-module-edit-cancel:hover,
@@ -424,6 +425,7 @@ body a:focus {
 			.dslca-pseudo-module-edit-cancel:hover  {
 				background: #f27562;
 				color: #fff;
+				cursor: pointer;
 			}
 
 	/**
@@ -807,7 +809,7 @@ body a:focus {
 						vertical-align: middle;
 					}
 
-						.dslca-options-iconbutton {
+						.dslca-module-edit-option .dslca-options-iconbutton {
 							background: #3b6fbe none repeat scroll 0 0;
 							border: 1px solid #3565ad;
 							border-radius: 3px;
@@ -818,6 +820,10 @@ body a:focus {
 							text-align: center;
 							vertical-align: middle;
 							padding: 0 10px;
+						}
+
+						.dslca-module-edit-option .dslca-options-iconbutton .dslca-icon:before {
+							cursor: pointer;
 						}
 
 						.dslca-options-iconbutton.dslca-module-edit-field-font-prev {
@@ -878,7 +884,8 @@ body a:focus {
 							font-family: 'Open Sans', sans-serif;
 						}
 
-							.dslca-module-edit-option-checkbox-hook .dslca-icon {
+							.dslca-module-edit-option .dslca-module-edit-option-checkbox-hook .dslca-icon {
+								cursor: pointer;
 								margin-right: 10px;
 							}
 
@@ -1075,6 +1082,10 @@ body a:focus {
 							line-height: 20px;
 						}
 
+						.dslca-module-edit-option .dslca-module-edit-option-text-align-hook .dslca-icon {
+							cursor: pointer;
+						}
+
 						.dslca-module-edit-option-text-align-hook:hover {
 							opacity: 0.8;
 						}
@@ -1217,8 +1228,9 @@ body a:focus {
 							font-family: 'Open Sans', sans-serif;
 						}
 
-							.dslca-modules-section-edit-option-checkbox-hook .dslca-icon {
+							.dslca-modules-section-edit-option .dslca-modules-section-edit-option-checkbox-hook .dslca-icon {
 								margin-right: 10px;
+								cursor: pointer;
 							}
 
 	.dslca-modules-section-settings {
@@ -1541,7 +1553,7 @@ body.section-editing-in-progress .dslc-modules-section:not(.dslca-modules-sectio
 }
 
 
-.dslc-control-toggle {
+.dslca-module-edit-option .dslc-control-toggle {
 	cursor: pointer;
 	font-size: 15px;
 	opacity: 0.5;
@@ -3279,7 +3291,7 @@ span.dslca-manage-action:hover * {
 }
 
 .dslca-module-edit-field-icon-ttip-hook,
-.dslca-module-edit-field-ttip-hook {
+.dslca-module-edit-option .dslca-module-edit-field-ttip-hook {
 	background: #3b6fbe;
 	color: #5890e5;
 	cursor: pointer;
@@ -3358,7 +3370,7 @@ span.dslca-manage-action:hover * {
 		margin-left: -9px;
 	}
 
-	.dslca-module-edit-field-ttip-close {
+	.dslca-module-edit-field-ttip .dslca-module-edit-field-ttip-close {
 		cursor: pointer;
 		position: absolute;
 		background: #e55f5f;
@@ -3371,6 +3383,10 @@ span.dslca-manage-action:hover * {
 		font-size: 11px;
 	}
 
+	.dslca-module-edit-field-ttip .dslca-module-edit-field-ttip-close .dslc-icon {
+		cursor: pointer;
+	}
+
 /**
  * Image Upload Field
  */
@@ -3380,10 +3396,10 @@ span.dslca-manage-action:hover * {
 	min-width: auto;
 }
 
-.dslca-modules-section-edit-field-image-add-hook,
-.dslca-modules-section-edit-field-image-remove-hook,
-.dslca-module-edit-field-image-add-hook,
-.dslca-module-edit-field-image-remove-hook {
+.dslca-modules-section-edit-option-upload .dslca-modules-section-edit-field-image-add-hook,
+.dslca-modules-section-edit-option-upload .dslca-modules-section-edit-field-image-remove-hook,
+.dslca-module-edit-option .dslca-module-edit-field-image-add-hook,
+.dslca-module-edit-option .dslca-module-edit-field-image-remove-hook {
 	background: #3b6fbe;
 	border: 1px solid #3565ad;
 	border-radius: 3px;
