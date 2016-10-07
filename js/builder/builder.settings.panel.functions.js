@@ -367,7 +367,7 @@ jQuery(document).ready(function($){
 				}
 
 				$(document).on('change dslc-init-deps', '.dslca-module-edit-option *[data-id="' + $(this).data('id') + '"]', handler);
-				self.Helpers.depsHandlers.push( handler );
+				LiveComposer.Builder.Helpers.depsHandlers.push( handler );
 			}
 		});
 

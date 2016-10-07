@@ -148,7 +148,7 @@ Upcoming Releases:
 *
 * Image module: background color overlays the image.
 * Fix JS bug in inline TinyMCE: indexOF....
-
+* Issue [#331](https://github.com/livecomposer/live-composer-page-builder/issues/331): Dependent_controls is not working
 = For developers: =
 
 * Developers now have a possibility to create custom sections in the modules.
