@@ -63,6 +63,13 @@ final class DSLC_Scripts{
 			wp_enqueue_style( 'dslc-modules-css', DS_LIVE_COMPOSER_URL . 'css/frontend/modules.css', array(), DS_LIVE_COMPOSER_VER );
 			wp_enqueue_style( 'dslc-plugins-css', DS_LIVE_COMPOSER_URL . 'css/frontend/plugins.css', array(), DS_LIVE_COMPOSER_VER );
 			wp_enqueue_style( 'dslc-font-awesome', DS_LIVE_COMPOSER_URL . 'css/font-awesome.css', array(), DS_LIVE_COMPOSER_VER );
+
+			/**
+			 * Load our IE-only stylesheet for all versions of IE:
+			 * <!--[if IE]> ... <![endif]-->
+			 */
+			wp_enqueue_style( 'dslc-css-ie',  DS_LIVE_COMPOSER_URL . 'css/ie.css', array('dslc-main-css'), DS_LIVE_COMPOSER_VER );
+			wp_style_add_data( 'dslc-css-ie', 'conditional', 'IE' );
 		// }
 
 		/**
