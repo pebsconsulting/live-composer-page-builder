@@ -191,6 +191,7 @@ function dslc_module_settings( $options, $module_id ) {
 	$settings = array();
 
 	// Go through all options.
+	// 🔖 RAW CODE CLEANUP
 	foreach ( $options as $option ) {
 
 		if ( isset( $_POST[ $option['id'] ] ) && '' !== $_POST[ $option['id'] ] ) {

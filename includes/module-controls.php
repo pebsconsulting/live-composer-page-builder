@@ -272,14 +272,17 @@ class LC_Control {
 					<span class="dslca-options-iconbutton dslca-module-edit-field-font-prev"><span class="dslca-icon dslc-icon-chevron-left"></span></span>
 					<span class="dslca-options-iconbutton dslca-module-edit-field-font-next"><span class="dslca-icon dslc-icon-chevron-right"></span></span>
 
-				<?php elseif ( 'icon' === $module_control['type'] ) : ?>
+				<?php elseif ( 'icon' === $module_control['type'] ) :
+
+					$curr_value = $this->get_starting_value();
+				?>
 
 					<div class="dslca-module-edit-field-icon-wrapper">
-						<input type="text" class="dslca-module-edit-field dslca-module-edit-field-icon" name="<?php echo esc_attr( $module_control['id'] ); ?>" data-id="<?php echo esc_attr( $module_control['id'] ); ?>" value="<?php echo esc_attr( $this->_curr_value ); ?>" <?php echo $affect_on_change_append ?> />
+						<input type="text" class="dslca-module-edit-field dslca-module-edit-field-icon" name="<?php echo esc_attr( $module_control['id'] ); ?>" data-id="<?php echo esc_attr( $module_control['id'] ); ?>" value="<?php echo esc_attr( $curr_value ); ?>" <?php echo $affect_on_change_append ?> />
 						<span class="dslca-module-edit-field-icon-suggest"></span>
 					</div>
 					<span class="dslca-options-iconbutton dslca-open-modal-hook" data-modal=".dslc-list-icons-fontawesome"><span class="dslca-icon dslc-icon-th"></span></span>
-					<span class="dslca-module-edit-field-icon-switch-set"><span class="dslca-icon dslc-icon-cog"></span> <span class="dslca-module-edit-field-icon-curr-set"><?php echo dslc_icons_current_set( $this->_curr_value ); ?></span></span>
+					<span class="dslca-module-edit-field-icon-switch-set"><span class="dslca-icon dslc-icon-cog"></span> <span class="dslca-module-edit-field-icon-curr-set"><?php echo dslc_icons_current_set( $curr_value ); ?></span></span>
 
 
 				<?php elseif ( 'image' === $module_control['type'] ) : ?>
@@ -601,6 +604,7 @@ class LC_Control {
 			'thumb_resize_width',
 			'thumb_resize_width_manual',
 			'button_icon_id',
+			'icon_id',
 			'icon_pos',
 			'button_state',
 			'resize_width',

@@ -2151,6 +2151,7 @@ class DSLC_Module {
 
 			$id = $default_option['id'];
 
+			// 🔖 RAW CODE CLEANUP
 			// Only clean options in the styling or custon sections.
 			// Never clean 'Functionality' section (it has no section parameter set).
 			if ( isset( $default_option['section'] ) && strtoupper( 'functionality' ) !== strtoupper( $default_option['section'] ) ) {
@@ -2202,6 +2203,7 @@ class DSLC_Module {
 					$options_ids[] = $option['id'];
 
 					// Set the setting value.
+					// 🔖 RAW CODE CLEANUP
 					if ( isset( $user_options[ $option_id ] ) ) {
 						$option_value = $user_options[ $option_id ];
 					} else {
@@ -2209,6 +2211,7 @@ class DSLC_Module {
 						// $option_value = $option['std'];
 					}
 
+					// 🔖 RAW CODE CLEANUP
 					if ( isset( $user_options[ $option_id ] ) ) {
 
 						if ( $user_options[ $option_id ] === $option['std'] || '' === $user_options[ $option_id ] ) {

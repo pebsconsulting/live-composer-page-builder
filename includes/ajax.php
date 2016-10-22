@@ -133,6 +133,8 @@ function dslc_ajax_add_module( $atts ) {
 		 *
 		 * Function dslc_module_settings get the custom settings for the current module
 		 * form $_POST[ $option['id'] ].
+		 *
+		 * 🔖 RAW CODE CLEANUP
 		 */
 		$module_settings = dslc_module_settings( $all_opts, $module_id );
 

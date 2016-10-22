@@ -428,6 +428,7 @@ function dslc_generate_section_code( theModulesSection ) {
 				moduleCodeJSON.last = moduleLastState;
 
 				// RAW CODE CLEANUP: Clean the module code from keys with empty values.
+				// 🔖 RAW CODE CLEANUP: Clean the module code from keys with empty values.
 				jQuery.each(moduleCodeJSON, function(index, el) {
 					if ( false === el || '' === el ) {
 						delete moduleCodeJSON[index];
