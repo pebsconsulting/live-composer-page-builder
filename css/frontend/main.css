@@ -1196,7 +1196,9 @@ a img.aligncenter { display: block; margin-left: auto; margin-right: auto }
 
 }
 
-/* IE10+ specific styles go here */
+/* @hack: IE10+ specific styles only.
+	Used to disable animations in IE.
+ */
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
 	.dslc-in-viewport-check {
 		transform: none !important;

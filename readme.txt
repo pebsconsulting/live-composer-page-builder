@@ -143,6 +143,7 @@ Upcoming Releases:
 
 = Bug fixes: =
 
+* Issue [#336](https://github.com/livecomposer/live-composer-page-builder/issues/336): Animations disabled ins IE.
 * Issue [#275](https://github.com/livecomposer/live-composer-page-builder/issues/275): Padding Vertical Shows Differently in Editor Mode than in Live Mode.
 * Issue [#297](https://github.com/livecomposer/live-composer-page-builder/issues/297): Can't change module width due to overlay problem with popup control.
 *
