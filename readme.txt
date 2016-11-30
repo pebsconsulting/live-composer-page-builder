@@ -143,6 +143,7 @@ Upcoming Releases:
 
 = Bug fixes: =
 
+* Issue [#387](https://github.com/livecomposer/live-composer-page-builder/issues/387): Gallery Slider module captions.
 * Issue [#307](https://github.com/livecomposer/live-composer-page-builder/issues/307): Dropdown control do not open when clicking on the arrows.
 * Issue [#304](https://github.com/livecomposer/live-composer-page-builder/issues/304): Image module background colour overlapping the picture.
 * Issue [#297](https://github.com/livecomposer/live-composer-page-builder/issues/297): Can't change module width due to overlay problem with popup control.
