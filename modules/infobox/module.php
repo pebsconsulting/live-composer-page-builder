@@ -893,7 +893,7 @@ class DSLC_Info_Box extends DSLC_Module {
 				'tab' => __( 'Icon', 'live-composer-page-builder' ),
 			),
 
-      /**
+      		/**
 			 * Image
 			 */
 
@@ -914,6 +914,23 @@ class DSLC_Info_Box extends DSLC_Module {
 				'section' => 'styling',
 				'tab' => __( 'Image', 'live-composer-page-builder' ),
 				'include_in_preset' => false,
+			),
+			array(
+				'label' => __( 'Image - ALT attribute', 'live-composer-page-builder' ),
+				'id' => 'image_alt_atr',
+				'std' => '',
+				'type' => 'text',
+				'section' => 'styling',
+				'tab' => __( 'Image', 'live-composer-page-builder' ),
+			),
+
+			array(
+				'label' => __( 'Image - TITLE attribute', 'live-composer-page-builder' ),
+				'id' => 'image_title_atr',
+				'std' => '',
+				'type' => 'text',
+				'section' => 'styling',
+				'tab' => __( 'Image', 'live-composer-page-builder' ),
 			),
 			array(
 				'label' => __( 'Align', 'live-composer-page-builder' ),
@@ -2935,9 +2952,9 @@ class DSLC_Info_Box extends DSLC_Module {
 							<div class="dslc-info-box-image-alt">
 								<div class="dslc-info-box-image-alt-inner">
 									<?php if ( ! $image_alt_link_url) : ?>
-										<img src="<?php echo esc_url($image_alt);?>">
+										<img src="<?php echo esc_url($image_alt);?>" alt="<?php echo esc_attr( $options['image_alt_atr'] ); ?>" title="<?php echo esc_attr( $options['image_title_atr'] ); ?>">
 									<?php else : ?>
-										<a href="<?php echo esc_url($image_alt_link_url);?>" <?php if ( $options['link_nofollow'] ) echo 'rel="nofollow"'; ?>><img src="<?php echo esc_url($image_alt);?>"></a>
+										<a href="<?php echo esc_url($image_alt_link_url);?>" <?php if ( $options['link_nofollow'] ) echo 'rel="nofollow"'; ?>><img src="<?php echo esc_url($image_alt);?>" alt="<?php echo esc_attr( $options['image_alt_atr'] ); ?>" title="<?php echo esc_attr( $options['image_title_atr'] ); ?>"></a>
 									<?php endif; ?>
 								</div><!-- .dslc-info-box-image-alt-inner -->
 							</div><!-- .dslc-info-box-image-alt -->
