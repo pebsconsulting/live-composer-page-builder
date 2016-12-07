@@ -161,6 +161,7 @@ jQuery(document).ready(function($) {
 
 		e.preventDefault();
 		dslc_template_load( jQuery(this).data('id') );
+		jQuery('iframe#page-builder-frame').contents().find('#dslc-main').prepend('<div class="template-loading"><span></span></div>');
 	});
 
 	/**

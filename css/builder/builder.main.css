@@ -4185,3 +4185,21 @@ div#scroller-stopper {
     width: 100%;
     height: 83px;
 }
+
+.template-loading {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 1;
+    background: #fff;
+}
+
+.template-loading span {
+    background: url(../../images/loading.gif) no-repeat;
+    height: 100px;
+    width: 100px;
+    display: block;
+    background-size: 100px;
+    margin-top: 20%;
+    margin-left: 50%;
+}
