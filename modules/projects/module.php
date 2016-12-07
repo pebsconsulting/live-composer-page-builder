@@ -2569,6 +2569,9 @@ class DSLC_Projects extends DSLC_Module {
 											$thumb_alt = get_post_meta( get_post_thumbnail_id(), '_wp_attachment_image_alt', true );
 											if ( ! $thumb_alt ) $thumb_alt = '';
 
+											$thumb_title = get_the_title( get_post_thumbnail_id() );
+											if ( ! $thumb_title ) $thumb_title = '';
+
 											$resize_width = false;
 											$resize_height = false;
 
@@ -2588,9 +2591,9 @@ class DSLC_Projects extends DSLC_Module {
 										<div class="dslc-post-thumb dslc-project-thumb dslc-on-hover-anim">
 											<div class="dslc-project-thumb-inner dslca-post-thumb">
 												<?php if ( $manual_resize ) : ?>
-													<a href="<?php echo $the_project_url; ?>" target="<?php echo $the_project_url_target; ?>"><img src="<?php $res_img = dslc_aq_resize( $thumb_url, $resize_width, $resize_height, true ); echo $res_img; ?>" alt="<?php echo $thumb_alt; ?>" /></a>
+													<a href="<?php echo $the_project_url; ?>" target="<?php echo $the_project_url_target; ?>"><img src="<?php $res_img = dslc_aq_resize( $thumb_url, $resize_width, $resize_height, true ); echo $res_img; ?>" alt="<?php echo $thumb_alt; ?>" title="<?php echo $thumb_title; ?>" /></a>
 												<?php else : ?>
-													<a href="<?php echo $the_project_url; ?>" target="<?php echo $the_project_url_target; ?>"><?php the_post_thumbnail( 'full' ); ?></a>
+													<a href="<?php echo $the_project_url; ?>" target="<?php echo $the_project_url_target; ?>"><?php the_post_thumbnail( 'full', array( 'title' => get_the_title( get_post_thumbnail_id() ) ) ); ?></a>
 												<?php endif; ?>
 											</div><!-- .dslc-project-thumb-inner -->
 

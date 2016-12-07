@@ -65,7 +65,7 @@ class DSLC_Info_Box extends DSLC_Module {
 				'label' => __( 'Title Link', 'live-composer-page-builder' ),
 				'id' => 'title_link',
 				'std' => '',
-				'type' => 'text'
+				'type' => 'text',
 			),
 			array(
 				'label' => __( 'Title Link - Open in', 'live-composer-page-builder' ),
@@ -81,13 +81,13 @@ class DSLC_Info_Box extends DSLC_Module {
 						'label' => __( 'New Tab', 'live-composer-page-builder' ),
 						'value' => '_blank',
 					),
-				)
+				),
 			),
 			array(
 				'label' => __( 'Icon Link', 'live-composer-page-builder' ),
 				'id' => 'icon_link',
 				'std' => '',
-				'type' => 'text'
+				'type' => 'text',
 			),
 			array(
 				'label' => __( 'Icon Link - Open in', 'live-composer-page-builder' ),
@@ -103,13 +103,13 @@ class DSLC_Info_Box extends DSLC_Module {
 						'label' => __( 'New Tab', 'live-composer-page-builder' ),
 						'value' => '_blank',
 					),
-				)
+				),
 			),
 			array(
 				'label' => __( 'Primary Button Link', 'live-composer-page-builder' ),
 				'id' => 'button_link',
 				'std' => '#',
-				'type' => 'text'
+				'type' => 'text',
 			),
 			array(
 				'label' => __( 'Primary Button - Open in', 'live-composer-page-builder' ),
@@ -125,13 +125,13 @@ class DSLC_Info_Box extends DSLC_Module {
 						'label' => __( 'New Tab', 'live-composer-page-builder' ),
 						'value' => '_blank',
 					),
-				)
+				),
 			),
 			array(
 				'label' => __( 'Secondary Button Link', 'live-composer-page-builder' ),
 				'id' => 'button_2_link',
 				'std' => '',
-				'type' => 'text'
+				'type' => 'text',
 			),
 			array(
 				'label' => __( 'Secondary Button - Open in', 'live-composer-page-builder' ),
@@ -147,9 +147,8 @@ class DSLC_Info_Box extends DSLC_Module {
 						'label' => __( 'New Tab', 'live-composer-page-builder' ),
 						'value' => '_blank',
 					),
-				)
+				),
 			),
-
 			array(
 				'id' => 'link_nofollow',
 				'std' => '',
@@ -467,7 +466,6 @@ class DSLC_Info_Box extends DSLC_Module {
 				'section' => 'styling',
 			),
 
-
 			/**
 			 * Wrapper
 			 */
@@ -481,7 +479,7 @@ class DSLC_Info_Box extends DSLC_Module {
 				'affect_on_change_el' => '.dslc-info-box-wrapper',
 				'affect_on_change_rule' => 'background-color',
 				'section' => 'styling',
-				'tab' => __( 'Wrapper', 'live-composer-page-builder' )
+				'tab' => __( 'Wrapper', 'live-composer-page-builder' ),
 			),
 			array(
 				'label' => __( 'BG Image', 'live-composer-page-builder' ),
@@ -492,7 +490,7 @@ class DSLC_Info_Box extends DSLC_Module {
 				'affect_on_change_el' => '.dslc-info-box-wrapper',
 				'affect_on_change_rule' => 'background-image',
 				'section' => 'styling',
-				'tab' => __( 'Wrapper', 'live-composer-page-builder' )
+				'tab' => __( 'Wrapper', 'live-composer-page-builder' ),
 			),
 			array(
 				'label' => __( 'BG Image Repeat', 'live-composer-page-builder' ),
@@ -521,7 +519,7 @@ class DSLC_Info_Box extends DSLC_Module {
 				'affect_on_change_el' => '.dslc-info-box-wrapper',
 				'affect_on_change_rule' => 'background-repeat',
 				'section' => 'styling',
-				'tab' => __( 'Wrapper', 'live-composer-page-builder' )
+				'tab' => __( 'Wrapper', 'live-composer-page-builder' ),
 			),
 			array(
 				'label' => __( 'BG Image Attachment', 'live-composer-page-builder' ),
@@ -542,7 +540,7 @@ class DSLC_Info_Box extends DSLC_Module {
 				'affect_on_change_el' => '.dslc-info-box-wrapper',
 				'affect_on_change_rule' => 'background-attachment',
 				'section' => 'styling',
-				'tab' => __( 'Wrapper', 'live-composer-page-builder' )
+				'tab' => __( 'Wrapper', 'live-composer-page-builder' ),
 			),
 			array(
 				'label' => __( 'BG Image Position', 'live-composer-page-builder' ),
@@ -591,7 +589,7 @@ class DSLC_Info_Box extends DSLC_Module {
 				'affect_on_change_el' => '.dslc-info-box-wrapper',
 				'affect_on_change_rule' => 'background-position',
 				'section' => 'styling',
-				'tab' => __( 'Wrapper', 'live-composer-page-builder' )
+				'tab' => __( 'Wrapper', 'live-composer-page-builder' ),
 			),
 			array(
 				'label' => __( 'Border Color', 'live-composer-page-builder' ),
@@ -602,7 +600,7 @@ class DSLC_Info_Box extends DSLC_Module {
 				'affect_on_change_el' => '.dslc-info-box-wrapper',
 				'affect_on_change_rule' => 'border-color',
 				'section' => 'styling',
-				'tab' => __( 'Wrapper', 'live-composer-page-builder' )
+				'tab' => __( 'Wrapper', 'live-composer-page-builder' ),
 			),
 			array(
 				'label' => __( 'Border Width', 'live-composer-page-builder' ),
@@ -615,7 +613,7 @@ class DSLC_Info_Box extends DSLC_Module {
 				'affect_on_change_rule' => 'border-width',
 				'section' => 'styling',
 				'ext' => 'px',
-				'tab' => __( 'Wrapper', 'live-composer-page-builder' )
+				'tab' => __( 'Wrapper', 'live-composer-page-builder' ),
 			),
 			array(
 				'label' => __( 'Borders', 'live-composer-page-builder' ),
@@ -644,7 +642,7 @@ class DSLC_Info_Box extends DSLC_Module {
 				'affect_on_change_el' => '.dslc-info-box-wrapper',
 				'affect_on_change_rule' => 'border-style',
 				'section' => 'styling',
-				'tab' => __( 'Wrapper', 'live-composer-page-builder' )
+				'tab' => __( 'Wrapper', 'live-composer-page-builder' ),
 			),
 			array(
 				'label' => __( 'Border Radius', 'live-composer-page-builder' ),
@@ -657,7 +655,7 @@ class DSLC_Info_Box extends DSLC_Module {
 				'affect_on_change_rule' => 'border-radius',
 				'section' => 'styling',
 				'ext' => 'px',
-				'tab' => __( 'Wrapper', 'live-composer-page-builder' )
+				'tab' => __( 'Wrapper', 'live-composer-page-builder' ),
 			),
 			array(
 				'label' => __( 'Padding Vertical', 'live-composer-page-builder' ),
@@ -672,7 +670,7 @@ class DSLC_Info_Box extends DSLC_Module {
 				'section' => 'styling',
 				'max' => 500,
 				'ext' => 'px',
-				'tab' => __( 'Wrapper', 'live-composer-page-builder' )
+				'tab' => __( 'Wrapper', 'live-composer-page-builder' ),
 			),
 			array(
 				'label' => __( 'Padding Horizontal', 'live-composer-page-builder' ),
@@ -685,7 +683,7 @@ class DSLC_Info_Box extends DSLC_Module {
 				'affect_on_change_rule' => 'padding-left,padding-right',
 				'section' => 'styling',
 				'ext' => 'px',
-				'tab' => __( 'Wrapper', 'live-composer-page-builder' )
+				'tab' => __( 'Wrapper', 'live-composer-page-builder' ),
 			),
 
 			/**
@@ -893,7 +891,7 @@ class DSLC_Info_Box extends DSLC_Module {
 				'tab' => __( 'Icon', 'live-composer-page-builder' ),
 			),
 
-      /**
+			/**
 			 * Image
 			 */
 
@@ -914,6 +912,36 @@ class DSLC_Info_Box extends DSLC_Module {
 				'section' => 'styling',
 				'tab' => __( 'Image', 'live-composer-page-builder' ),
 				'include_in_preset' => false,
+			),
+			array(
+				'label' => __( 'Image - ALT attribute', 'live-composer-page-builder' ),
+				'id' => 'image_alt_atr',
+				'std' => '',
+				'type' => 'text',
+				'section' => 'styling',
+				'tab' => __( 'Image', 'live-composer-page-builder' ),
+			),
+			array(
+				'label' => __( 'Image - TITLE attribute', 'live-composer-page-builder' ),
+				'id' => 'image_title_atr',
+				'std' => '',
+				'type' => 'text',
+				'section' => 'styling',
+				'tab' => __( 'Image', 'live-composer-page-builder' ),
+			),
+			array(
+				'id' => 'image_sync',
+				'std' => '',
+				'type' => 'checkbox',
+				'help' => __( 'Sync alt and title values with the media library', 'live-composer-page-builder' ),
+				'choices' => array(
+					array(
+					'label' => __( 'Sync Image', 'live-composer-page-builder' ),
+					'value' => 'enabled',
+					),
+				),
+				'section' => 'styling',
+				'tab' => __( 'Image', 'live-composer-page-builder' ),
 			),
 			array(
 				'label' => __( 'Align', 'live-composer-page-builder' ),
@@ -1258,7 +1286,6 @@ class DSLC_Info_Box extends DSLC_Module {
 				'section' => 'styling',
 				'tab' => __( 'Title', 'live-composer-page-builder' ),
 			),
-
 
 			/**
 			 * Content
@@ -2932,12 +2959,19 @@ class DSLC_Info_Box extends DSLC_Module {
 						<?php endif; ?>
 
 						<?php if ( in_array( 'image', $elements ) && $image_alt ) : ?>
+							<?php
+
+							$image_id = attachment_url_to_postid( $image_alt );
+							$image_alt_atr = get_post_meta( $image_id, '_wp_attachment_image_alt', true );
+							$image_title_atr = get_the_title( $image_id );
+
+							?>
 							<div class="dslc-info-box-image-alt">
 								<div class="dslc-info-box-image-alt-inner">
 									<?php if ( ! $image_alt_link_url) : ?>
-										<img src="<?php echo esc_url($image_alt);?>">
+										<img src="<?php echo esc_url($image_alt);?>" alt="<?php if ( $options['image_sync'] ) { echo $image_alt_atr; } else { echo esc_attr( $options['image_alt_atr'] ); } ?>" title="<?php if ( $options['image_sync'] ) { echo $image_title_atr; } else { echo esc_attr( $options['image_title_atr'] ); } ?>" />
 									<?php else : ?>
-										<a href="<?php echo esc_url($image_alt_link_url);?>" <?php if ( $options['link_nofollow'] ) echo 'rel="nofollow"'; ?>><img src="<?php echo esc_url($image_alt);?>"></a>
+										<a href="<?php echo esc_url($image_alt_link_url);?>" <?php if ( $options['link_nofollow'] ) echo 'rel="nofollow"'; ?>><img src="<?php echo esc_url($image_alt);?>" alt="<?php if ( $options['image_sync'] ) { echo $image_alt_atr; } else { echo esc_attr( $options['image_alt_atr'] ); } ?>" title="<?php if ( $options['image_sync'] ) { echo $image_title_atr; } else { echo esc_attr( $options['image_title_atr'] ); } ?>" /></a>
 									<?php endif; ?>
 								</div><!-- .dslc-info-box-image-alt-inner -->
 							</div><!-- .dslc-info-box-image-alt -->

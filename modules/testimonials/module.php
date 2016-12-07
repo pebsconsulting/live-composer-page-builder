@@ -2146,7 +2146,7 @@ class DSLC_Testimonials extends DSLC_Module {
 									<?php if ( $post_elements == 'all' || in_array( 'avatar', $post_elements ) ) : ?>
 
 										<div class="dslc-testimonial-author-avatar">
-											<?php the_post_thumbnail( 'full' ); ?>
+											<?php the_post_thumbnail( 'full', array( 'title' => get_the_title( get_post_thumbnail_id() ) ) ); ?>
 										</div><!-- .dslc-testimonial-author-avatar -->
 
 									<?php endif; ?>

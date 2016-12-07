@@ -970,7 +970,10 @@ class DSLC_TP_Project_Slider extends DSLC_Module {
 											$thumb_alt = get_post_meta( $project_image, '_wp_attachment_image_alt', true );
 											if ( ! $thumb_alt ) $thumb_alt = '';
 
-											?><div class="dslc-slider-item"><img class="<?php echo $img_class; ?>" src="<?php echo $project_image_src; ?>" alt="<?php echo $thumb_alt; ?>" /></div><?php
+											$thumb_title = get_the_title( $project_image );
+											if ( ! $thumb_title ) $thumb_title = '';
+
+											?><div class="dslc-slider-item"><img class="<?php echo $img_class; ?>" src="<?php echo $project_image_src; ?>" alt="<?php echo $thumb_alt; ?>" title="<?php echo $thumb_title; ?>" /></div><?php
 
 										}
 

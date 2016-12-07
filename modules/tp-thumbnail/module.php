@@ -381,6 +381,9 @@ class DSLC_TP_Thumbnail extends DSLC_Module {
 			$resize_width = false;
 			$resize_height = false;
 
+			$thumb_title = get_the_title( get_post_thumbnail_id() );
+			if ( ! $thumb_title ) $thumb_title = '';
+
 			if ( isset( $options['resize_width'] ) && ! empty( $options['resize_width'] ) ) {
 				$resize_width = $options['resize_width'];
 			}
@@ -397,9 +400,9 @@ class DSLC_TP_Thumbnail extends DSLC_Module {
 				<?php
 				if ( $manual_resize ) : ?>
 					<?php $res_img = dslc_aq_resize( $thumb_url, $resize_width, $resize_height, true ); ?>
-					<img src="<?php echo esc_attr( $res_img ); ?>" />
+					<img src="<?php echo esc_attr( $res_img ); ?>" alt="<?php echo esc_attr( dslc_get_attachment_alt( get_post_thumbnail_id() ) ); ?>" title="<?php echo $thumb_title; ?>" />
 				<?php else : ?>
-					<?php echo get_the_post_thumbnail( $post_id, 'full' ); ?>
+					<?php echo get_the_post_thumbnail( $post_id, 'full', array( 'title' => get_the_title( $post_id ) ) ); ?>
 				<?php endif;?>
 				</div>
 			<?php else : ?>
@@ -427,9 +430,9 @@ class DSLC_TP_Thumbnail extends DSLC_Module {
 				<?php endif; ?>
 					<?php if ( $manual_resize ) : ?>
 						<?php $res_img = dslc_aq_resize( $thumb_url, $resize_width, $resize_height, true );?>
-						<img src="<?php echo esc_attr( $res_img ); ?>" alt="<?php echo esc_attr( dslc_get_attachment_alt( get_post_thumbnail_id() ) ); ?>" />
+						<img src="<?php echo esc_attr( $res_img ); ?>" alt="<?php echo esc_attr( dslc_get_attachment_alt( get_post_thumbnail_id() ) ); ?>" title="<?php echo $thumb_title; ?>" />
 					<?php else : ?>
-						<?php the_post_thumbnail( 'full' ); ?>
+						<?php the_post_thumbnail( 'full', array( 'title' => get_the_title( get_post_thumbnail_id() ) ) ); ?>
 					<?php endif; ?>
 				<?php if ( isset( $options['lightbox_state'] ) && 'enabled' === $options['lightbox_state'] ) : ?>
 					</a>

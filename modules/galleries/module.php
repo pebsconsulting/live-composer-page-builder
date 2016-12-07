@@ -2773,6 +2773,9 @@ class DSLC_Galleries extends DSLC_Module {
 														$thumb_alt = get_post_meta( get_post_thumbnail_id(), '_wp_attachment_image_alt', true );
 														if ( ! $thumb_alt ) $thumb_alt = '';
 
+														$thumb_title = get_the_title( get_post_thumbnail_id() );
+														if ( ! $thumb_title ) $thumb_title = '';
+
 														$resize_width = false;
 														$resize_height = false;
 
@@ -2788,9 +2791,9 @@ class DSLC_Galleries extends DSLC_Module {
 												?>
 
 												<?php if ( $manual_resize ) : ?>
-													<a href="<?php echo $the_permalink; ?>" class="<?php echo $thumb_anchor_class; ?>"><img src="<?php $res_img = dslc_aq_resize( $thumb_url, $resize_width, $resize_height, true ); echo $res_img; ?>" alt="<?php echo $thumb_alt; ?>" /></a>
+													<a href="<?php echo $the_permalink; ?>" class="<?php echo $thumb_anchor_class; ?>"><img src="<?php $res_img = dslc_aq_resize( $thumb_url, $resize_width, $resize_height, true ); echo $res_img; ?>" alt="<?php echo $thumb_alt; ?>" title="<?php echo $thumb_title; ?>" /></a>
 												<?php else : ?>
-													<a href="<?php echo $the_permalink; ?>" class="<?php echo $thumb_anchor_class; ?>"><?php the_post_thumbnail( 'full' ); ?></a>
+													<a href="<?php echo $the_permalink; ?>" class="<?php echo $thumb_anchor_class; ?>"><?php the_post_thumbnail( 'full', array( 'title' => get_the_title( get_post_thumbnail_id() ) ) ); ?></a>
 												<?php endif; ?>
 
 												<?php if ( $post_elements == 'all' || in_array( 'count', $post_elements ) ) : ?>
