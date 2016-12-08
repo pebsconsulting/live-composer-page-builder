@@ -930,20 +930,6 @@ class DSLC_Info_Box extends DSLC_Module {
 				'tab' => __( 'Image', 'live-composer-page-builder' ),
 			),
 			array(
-				'id' => 'image_sync',
-				'std' => '',
-				'type' => 'checkbox',
-				'help' => __( 'Sync alt and title values with the media library', 'live-composer-page-builder' ),
-				'choices' => array(
-					array(
-					'label' => __( 'Sync Image', 'live-composer-page-builder' ),
-					'value' => 'enabled',
-					),
-				),
-				'section' => 'styling',
-				'tab' => __( 'Image', 'live-composer-page-builder' ),
-			),
-			array(
 				'label' => __( 'Align', 'live-composer-page-builder' ),
 				'id' => 'css_image_alt_align',
 				'std' => 'center',
@@ -2959,19 +2945,12 @@ class DSLC_Info_Box extends DSLC_Module {
 						<?php endif; ?>
 
 						<?php if ( in_array( 'image', $elements ) && $image_alt ) : ?>
-							<?php
-
-							$image_id = attachment_url_to_postid( $image_alt );
-							$image_alt_atr = get_post_meta( $image_id, '_wp_attachment_image_alt', true );
-							$image_title_atr = get_the_title( $image_id );
-
-							?>
 							<div class="dslc-info-box-image-alt">
 								<div class="dslc-info-box-image-alt-inner">
 									<?php if ( ! $image_alt_link_url) : ?>
-										<img src="<?php echo esc_url($image_alt);?>" alt="<?php if ( $options['image_sync'] ) { echo $image_alt_atr; } else { echo esc_attr( $options['image_alt_atr'] ); } ?>" title="<?php if ( $options['image_sync'] ) { echo $image_title_atr; } else { echo esc_attr( $options['image_title_atr'] ); } ?>" />
+										<img src="<?php echo esc_url($image_alt);?>" alt="<?php echo esc_attr( $options['image_alt_atr'] ); ?>" title="<?php echo esc_attr( $options['image_title_atr'] ); ?>" />
 									<?php else : ?>
-										<a href="<?php echo esc_url($image_alt_link_url);?>" <?php if ( $options['link_nofollow'] ) echo 'rel="nofollow"'; ?>><img src="<?php echo esc_url($image_alt);?>" alt="<?php if ( $options['image_sync'] ) { echo $image_alt_atr; } else { echo esc_attr( $options['image_alt_atr'] ); } ?>" title="<?php if ( $options['image_sync'] ) { echo $image_title_atr; } else { echo esc_attr( $options['image_title_atr'] ); } ?>" /></a>
+										<a href="<?php echo esc_url($image_alt_link_url);?>" <?php if ( $options['link_nofollow'] ) echo 'rel="nofollow"'; ?>><img src="<?php echo esc_url($image_alt);?>" alt="<?php echo esc_attr( $options['image_alt_atr'] ); ?>" title="<?php echo esc_attr( $options['image_title_atr'] ); ?>" /></a>
 									<?php endif; ?>
 								</div><!-- .dslc-info-box-image-alt-inner -->
 							</div><!-- .dslc-info-box-image-alt -->
