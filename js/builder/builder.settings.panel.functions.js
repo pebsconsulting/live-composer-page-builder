@@ -164,7 +164,7 @@ jQuery(document).ready(function($){
 
 			jQuery("body", LiveComposer.Builder.PreviewAreaDocument).removeClass('module-editing-in-progress');
 
-		});
+		}, 'false');
 
 		jQuery('.dslca-options-filter-hook.dslca-active').removeClass('dslca-active');
 
@@ -187,7 +187,7 @@ jQuery(document).ready(function($){
 
 			jQuery("body", LiveComposer.Builder.PreviewAreaDocument).removeClass('module-editing-in-progress');
 
-		});
+		}, 'false');
 
 		jQuery('.dslca-options-filter-hook.dslca-active').removeClass('dslca-active');
 
@@ -951,12 +951,14 @@ function dslc_module_options_hideshow_tabs() {
 /**
  * MODULES SETTINGS PANEL - Confirm module options changes
  */
-function dslc_module_options_confirm_changes( callback ) {
+function dslc_module_options_confirm_changes( callback, refresh_on_change ) {
 
 	if ( dslcDebug ) console.log( 'dslc_module_options_confirm_changes' );
 
 	// Callback
 	callback = typeof callback !== 'undefined' ? callback : false;
+
+	var refresh_on_change = refresh_on_change;
 
 	// If slider module
 	if ( jQuery('.dslca-module-being-edited', LiveComposer.Builder.PreviewAreaDocument).hasClass('dslc-module-DSLC_Sliders') ) {
@@ -989,7 +991,7 @@ function dslc_module_options_confirm_changes( callback ) {
 
 			// Callback if there's one
 			if ( callback ) { callback(); }
-		});
+		}, refresh_on_change);
 	}
 
 	// Show modules listing
@@ -1012,12 +1014,14 @@ function dslc_module_options_confirm_changes( callback ) {
 /**
  * MODULES SETTINGS PANEL - Cancel module options changes
  */
-function dslc_module_options_cancel_changes( callback ) {
+function dslc_module_options_cancel_changes( callback, refresh_on_change ) {
 
 	if ( dslcDebug ) console.log( 'dslc_module_options_cancel_changes' );
 
 	// Callback
 	callback = typeof callback !== 'undefined' ? callback : false;
+
+	var refresh_on_change = refresh_on_change;
 
 	// Vars
 	var editedModule = jQuery('.dslca-module-being-edited', LiveComposer.Builder.PreviewAreaDocument);
@@ -1038,7 +1042,7 @@ function dslc_module_options_cancel_changes( callback ) {
 		jQuery('.dslca-module-edit-options-tabs').html('');
 
 		if ( callback ) { callback(); }
-	});
+	}, refresh_on_change);
 
 	// Show modules listing
 	dslc_show_section('.dslca-modules');

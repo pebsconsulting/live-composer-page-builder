@@ -606,7 +606,7 @@ function dslc_module_output_default( dslc_module_id, callback ) {
 /**
  * MODULES - Redraw module output when settings altered
  */
-function dslc_module_output_altered( callback ) {
+function dslc_module_output_altered( callback, refresh_on_change ) {
 
 	if ( dslcDebug ) console.log( 'dslc_module_output_altered' );
 
@@ -616,6 +616,8 @@ function dslc_module_output_altered( callback ) {
 	dslc_module_id = dslcModule.data('dslc-module-id'),
 	dslcModuleOptions = jQuery( '.dslca-module-options-front textarea', dslcModule ),
 	dslcModuleInstanceID = dslcModule.data('module-id');
+
+	var refresh_on_change = refresh_on_change;
 
 	/**
 	 * Generate code
@@ -661,7 +663,7 @@ function dslc_module_output_altered( callback ) {
 			var newModule = LiveComposer.
 								Builder.
 								Helpers.
-								insertModule( response.output, dslcModule );
+								insertModule( response.output, dslcModule, refresh_on_change );
 
 			newModule.addClass('dslca-module-being-edited');
 

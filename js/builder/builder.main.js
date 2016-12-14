@@ -84,7 +84,9 @@ var LiveComposer = {
 	 *
 	 * @return {DOM} inserted object
 	 */
-	LiveComposer.Builder.Helpers.insertModule = function( moduleHTML, afterObject ) {
+	LiveComposer.Builder.Helpers.insertModule = function( moduleHTML, afterObject, refresh_on_change ) {
+
+		var refresh_on_change = refresh_on_change;
 
 		var newModule = jQuery(moduleHTML),
 			afterObject = jQuery(afterObject);
@@ -99,9 +101,16 @@ var LiveComposer = {
 
 		// Insert 'updated' module output after module we are editing.
 		// && Delete 'old' instance of the module we are editing.
-		afterObject
-			.after(newModule)
-			.remove();
+
+		if ( refresh_on_change == 'false' ) {
+		    afterObject.find("[id^='css-for-dslc-module']").after(newModule.find("[id^='css-for-dslc-module']")[0]).remove();
+			afterObject.find('.dslca-module-options-front').after(newModule.find('.dslca-module-options-front')[0]).remove();
+			afterObject.find('.dslca-module-code').after(newModule.find('.dslca-module-code')[0]).remove();
+		} else {
+			afterObject
+				.after(newModule)
+				.remove(); // 4 step - DELETE MODULE
+		}
 
 		scripts.forEach(function(item) {
 
