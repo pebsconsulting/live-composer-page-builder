@@ -54,6 +54,10 @@ function dslc_perf_settings_init() {
 					array(
 						'label' => 'Vietnamese',
 						'value' => 'vietnamese',
+					),
+					array(
+						'label' => 'Thai',
+						'value' => 'thai',
 					)
 				)
 			)
