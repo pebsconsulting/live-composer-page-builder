@@ -281,6 +281,23 @@ class DSLC_Posts extends DSLC_Module {
 			 */
 
 			array(
+				'label' => __( 'Enable/Disable Custom CSS', 'live-composer-page-builder' ),
+				'id' => 'css_custom',
+				'std' => 'enabled',
+				'type' => 'select',
+				'choices' => array(
+					array(
+						'label' => __( 'Enabled', 'live-composer-page-builder' ),
+						'value' => 'enabled',
+					),
+					array(
+						'label' => __( 'Disabled', 'live-composer-page-builder' ),
+						'value' => 'disabled',
+					),
+				),
+				'section' => 'styling',
+			),
+			array(
 				'label' => __( 'Elements', 'live-composer-page-builder' ),
 				'id' => 'elements',
 				'std' => '',

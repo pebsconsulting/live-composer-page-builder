@@ -366,9 +366,7 @@ function dslc_module_gen_css( $atts, $settings_raw ) {
 
 		$css_output = '';
 
-		if ( 'DSLC_Html' === $module_id && ! isset( $settings['css_custom'] ) ) {
-			$css_output = '';
-		} elseif ( isset( $settings['css_custom'] ) && 'disabled' === $settings['css_custom'] ) {
+		if ( isset( $settings['css_custom'] ) && 'disabled' === $settings['css_custom'] ) {
 			$css_output = '';
 		} else {
 			$css_output = dslc_generate_custom_css( $options_arr, $settings );

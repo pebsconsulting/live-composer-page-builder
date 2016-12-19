@@ -915,23 +915,19 @@ function dslc_module_options_hideshow_tabs() {
 
 	if ( jQuery('.dslca-options-filter-hook[data-section="styling"]').hasClass('dslca-active') ) {
 
-		if ( jQuery('.dslca-module-being-edited', LiveComposer.Builder.PreviewAreaDocument).data('dslc-module-id') == 'DSLC_Text_Simple' ||
-			  jQuery('.dslca-module-being-edited', LiveComposer.Builder.PreviewAreaDocument).data('dslc-module-id') == 'DSLC_TP_Content' || 
-			  jQuery('.dslca-module-being-edited', LiveComposer.Builder.PreviewAreaDocument).data('dslc-module-id') == 'DSLC_Html' ) {
+		var dslcCustomCSS = jQuery('.dslca-module-edit-option[data-id="css_custom"]'),
+		dslcCustomCSSVal = dslcCustomCSS.find('select').val();
 
-			var dslcCustomCSS = jQuery('.dslca-module-edit-option[data-id="css_custom"]'),
-			dslcCustomCSSVal = dslcCustomCSS.find('select').val();
+		if ( dslcCustomCSSVal == 'enabled' ) {
 
-			if ( dslcCustomCSSVal == 'enabled' ) {
-
-				jQuery('.dslca-module-edit-option[data-section="styling"]').css({ visibility : 'visible' });
-				jQuery('.dslca-module-edit-options-tabs').show();
-			} else {
-				jQuery('.dslca-module-edit-option[data-section="styling"]').css({ visibility : 'hidden' });
-				jQuery('.dslca-module-edit-options-tabs').hide();
-				dslcCustomCSS.css({ visibility : 'visible' });
-			}
-
+			jQuery('.dslca-module-edit-option[data-section="styling"]').css({ visibility : 'visible' });
+			jQuery('.dslca-module-control-group').css({ visibility : 'visible' });
+			jQuery('.dslca-module-edit-options-tabs').show();
+		} else {
+			jQuery('.dslca-module-edit-option[data-section="styling"]').css({ visibility : 'hidden' });
+			jQuery('.dslca-module-control-group').css({ visibility : 'hidden' });
+			jQuery('.dslca-module-edit-options-tabs').hide();
+			dslcCustomCSS.css({ visibility : 'visible' });
 		}
 
 	} else {
