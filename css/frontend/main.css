@@ -1,3 +1,7 @@
+html, body {
+	height: 100%;
+}
+
 #dslc-content blockquote p:last-child { margin-bottom: 0 !important; }
 
 #dslc-header {
@@ -295,7 +299,7 @@ body.rtl .dslc-last-col {
 	border-radius: 3px;
 
 	position: fixed;
-	z-index: 99999;
+	z-index: 999999;
 	right: 5px;
 	bottom: 5px;
 
@@ -1098,6 +1102,7 @@ body.dslca-enabled #dslc-content .dslc-post:first-child .dslc-post-thumb .dslc-o
 #dslc-content {
 	position: relative;
 	overflow: hidden; /* Fix: Slide Left Temporarily Extends Page Width; */
+	min-height: 100%;
 }
 
 /**
