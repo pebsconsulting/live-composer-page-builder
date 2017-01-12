@@ -1394,6 +1394,15 @@ class DSLC_Module {
 				'tab' => 'Pagination',
 			),
 			array(
+				'label' => __( 'Pagination Text', 'live-composer-page-builder' ),
+				'help' => 'It works when you select <strong>Pagination -> Load More</strong>',
+				'id' => 'pagination_text',
+				'std' => 'Load More Items',
+				'type' => 'text',
+				'section' => 'styling',
+				'tab' => 'Pagination',
+			),
+			array(
 				'label' => 'Container - BG Color',
 				'id' => 'css_pag_bg_color',
 				'std' => '',

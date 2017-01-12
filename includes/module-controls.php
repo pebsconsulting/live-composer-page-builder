@@ -610,6 +610,7 @@ class LC_Control {
 			'button_state',
 			'resize_width',
 			'resize_height',
+			'pagination_text',
 		);
 
 		$control_with_toggle = false;

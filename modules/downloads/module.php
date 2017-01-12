@@ -2929,7 +2929,7 @@ class DSLC_Downloads extends DSLC_Module {
 				if ( $options['offset'] > 0 ) {
 					$num_pages = ceil( ( $dslc_query->found_posts - $options['offset'] ) / $options['amount'] );
 				}
-				dslc_post_pagination( array('pages' => $num_pages, 'type' => $options['pagination_type']) );
+				dslc_post_pagination( array( 'pages' => $num_pages, 'type' => $options['pagination_type'], 'pagination_text' => $options['pagination_text'] ) );
 			}
 
 			wp_reset_postdata();
