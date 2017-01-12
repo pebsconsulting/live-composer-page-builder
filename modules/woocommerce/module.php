@@ -204,7 +204,20 @@ class DSLC_WooCommerce_Products extends DSLC_Module {
 						'label' => __( 'Price', 'live-composer-page-builder' ),
 						'value' => 'price',
 					),
+					array(
+						'label' => __( 'Custom Field', 'live-composer-page-builder' ),
+						'value' => 'custom_field',
+					),
 				),
+				'dependent_controls' => array(
+					'custom_field' => 'meta_key',
+				),
+			),
+			array(
+				'label' => __( 'Meta Key', 'live-composer-page-builder' ),
+				'id' => 'meta_key',
+				'std' => '',
+				'type' => 'text',
 			),
 			array(
 				'label' => __( 'Order', 'live-composer-page-builder' ),
@@ -2493,6 +2506,25 @@ class DSLC_WooCommerce_Products extends DSLC_Module {
 					'order' => $options['order'],
 					'orderby' => $options['orderby'],
 				);
+
+				if ( $options['orderby'] == 'custom_field' ) {
+					$args = array(
+						'paged' => $paged,
+						'post_type' => 'product',
+						'posts_per_page' => $options['amount'],
+						'meta_key' => $options['meta_key'],
+						'orderby' => 'meta_value',
+						'order' => $options['order'],
+					);
+				} else {
+					$args = array(
+						'paged' => $paged,
+						'post_type' => 'product',
+						'posts_per_page' => $options['amount'],
+						'order' => $options['order'],
+						'orderby' => $options['orderby'],
+					);
+				}
 
 				// Add offset
 				if ( $query_offset > 0 ) {
