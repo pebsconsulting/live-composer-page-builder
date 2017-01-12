@@ -601,7 +601,6 @@ class LC_Control {
 			'image_alt_link_url',
 			'image_alt_atr',
 			'image_title_atr',
-			'image_sync',
 			'elements',
 			'post_elements',
 			'carousel_elements',
