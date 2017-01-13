@@ -51,6 +51,18 @@ class DSLC_Blog extends DSLC_Module {
 			);
 		}
 
+		// Get tags.
+		$tags = get_tags();
+		$tags_choices = array();
+
+		// Generate usable array of tags.
+		foreach ( $tags as $tag ) {
+			$tags_choices[] = array(
+				'label' => $tag->name,
+				'value' => $tag->term_id,
+			);
+		}
+
 		/**
 		 * Options
 		 */
@@ -130,6 +142,26 @@ class DSLC_Blog extends DSLC_Module {
 				'choices' => $this->shared_options( 'posts_per_row_choices' ),
 			),
 			array(
+				'label' => __( 'Filter Posts By', 'live-composer-page-builder' ),
+				'id' => 'filter_posts_by',
+				'std' => 'categories',
+				'type' => 'select',
+				'choices' => array(
+					array(
+						'label' => __( 'Categories', 'live-composer-page-builder' ),
+						'value' => 'categories',
+					),
+					array(
+						'label' => __( 'Tags', 'live-composer-page-builder' ),
+						'value' => 'tags',
+					),
+				),
+				'dependent_controls' => array(
+					'categories' => 'categories, categories_operator',
+					'tags' => 'tags',
+				),
+			),
+			array(
 				'label' => __( 'Categories', 'live-composer-page-builder' ),
 				'id' => 'categories',
 				'std' => '',
@@ -156,6 +188,13 @@ class DSLC_Blog extends DSLC_Module {
 						'value' => 'NOT IN',
 					),
 				),
+			),
+			array(
+				'label' => __( 'Tags', 'live-composer-page-builder' ),
+				'id' => 'tags',
+				'std' => '',
+				'type' => 'checkbox',
+				'choices' => $tags_choices,
 			),
 			array(
 				'label' => __( 'Order By', 'live-composer-page-builder' ),
@@ -2929,20 +2968,36 @@ class DSLC_Blog extends DSLC_Module {
 				$args['post_status'] = array('publish', 'private');
 			}
 
-			// Category args
-			if ( isset( $options['categories'] ) && $options['categories'] != '' ) {
 
-				$cats_array = explode( ' ', trim( $options['categories'] ) );
+			if ( 'categories' == $options['filter_posts_by'] ) {
+				// Category args.
+				if ( isset( $options['categories'] ) && $options['categories'] != '' ) {
 
-				$args['tax_query'] = array(
-					array(
-						'taxonomy' => 'category',
-						'field' => 'term_id',
-						'terms' => $cats_array,
-						'operator' => $options['categories_operator']
-					)
-				);
+					$cats_array = explode( ' ', trim( $options['categories'] ) );
 
+					$args['tax_query'] = array(
+						array(
+							'taxonomy' => 'category',
+							'field' => 'term_id',
+							'terms' => $cats_array,
+							'operator' => $options['categories_operator'],
+						),
+					);
+				}
+			} else {
+				// Tags args.
+				if ( isset( $options['tags'] ) && $options['tags'] != '' ) {
+
+					$tags_array = explode( ' ', trim( $options['tags'] ) );
+
+					$args['tax_query'] = array(
+						array(
+							'taxonomy' => 'post_tag',
+							'field' => 'term_id',
+							'terms' => $tags_array,
+						),
+					);
+				}
 			}
 
 			// Exlcude and Include arrays
