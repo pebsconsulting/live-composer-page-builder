@@ -2925,7 +2925,7 @@ class DSLC_Blog extends DSLC_Module {
 			if ( $query_offset > 0 && $paged > 1 ) $query_offset = ( $paged - 1 ) * $options['amount'] + $options['offset'];
 
 			// General args
-			if ( $options['orderby'] == 'custom_field' ) {
+			if ( 'custom_field' === $options['orderby'] ) {
 				$args = array(
 					'paged' => $paged,
 					'post_type' => 'post',

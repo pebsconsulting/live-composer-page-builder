@@ -2507,7 +2507,7 @@ class DSLC_WooCommerce_Products extends DSLC_Module {
 					'orderby' => $options['orderby'],
 				);
 
-				if ( $options['orderby'] == 'custom_field' ) {
+				if ( 'custom_field' === $options['orderby'] ) {
 					$args = array(
 						'paged' => $paged,
 						'post_type' => 'product',

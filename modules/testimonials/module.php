@@ -1876,7 +1876,7 @@ class DSLC_Testimonials extends DSLC_Module {
 			$query_offset = $options['offset'];
 			if ( $query_offset > 0 && $paged > 1 ) $query_offset = ( $paged - 1 ) * $options['amount'] + $options['offset'];
 
-			if ( $options['orderby'] == 'custom_field' ) {
+			if ( 'custom_field' === $options['orderby'] ) {
 				$args = array(
 					'paged' => $paged,
 					'post_type' => 'dslc_testimonials',
