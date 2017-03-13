@@ -328,7 +328,19 @@ class DSLC_Text_Simple extends DSLC_Module {
 					'affect_on_change_rule' => 'background-position',
 					'section' => 'styling',
 				),
-
+				array(
+					'label' => __( 'Opacity', 'live-composer-page-builder' ),
+					'id' => 'css_main_bg_img_opacity',
+					'onlypositive' => true, // Value can't be negative.
+					'std' => '1',
+					'type' => 'slider',
+					'refresh_on_change' => false,
+					'affect_on_change_el' => '.dslc-text-module-content',
+					'affect_on_change_rule' => 'opacity',
+					'section' => 'styling',
+					'max' => 1,
+					'increment' => 0.01
+				),
 			array(
 				'id' => 'css_main_bg_group',
 				'type' => 'group',
