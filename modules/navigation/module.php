@@ -1043,6 +1043,20 @@ class DSLC_Navigation extends DSLC_Module {
 				'tab' => __( 'Subnav', 'live-composer-page-builder' ),
 			),
 			array(
+				'label' => __( 'Margin Top', 'live-composer-page-builder' ),
+				'id' => 'css_subnav_margin_top',
+				'onlypositive' => true, // Value can't be negative.
+				'max' => 200,
+				'std' => '0',
+				'type' => 'slider',
+				'refresh_on_change' => false,
+				'affect_on_change_el' => '.dslc-navigation .menu ul',
+				'affect_on_change_rule' => 'margin-top',
+				'section' => 'styling',
+				'ext' => 'px',
+				'tab' => __( 'Subnav', 'live-composer-page-builder' ),
+			),
+			array(
 				'label' => __( 'Padding Vertical', 'live-composer-page-builder' ),
 				'id' => 'css_subnav_padding_vertical',
 				'onlypositive' => true, // Value can't be negative.
