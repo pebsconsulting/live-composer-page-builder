@@ -54,6 +54,9 @@ function dslc_display_composer() {
 			$url_id = $_GET['page_id'];
 		}
 
+		$type = get_post_type( $url_id );
+		apply_filters( 'dslc_flag_active', $type );
+
 		?>
 
 			<div class="dslca-container dslca-state-off" data-post-id="<?php echo intval( $_GET['page_id'] ); ?>">
